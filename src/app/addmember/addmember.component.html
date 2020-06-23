@@ -1,0 +1,76 @@
+<div fxLayout="row" fxLayoutAlign="center center" style="margin-top:6em">
+
+        <div fxLayout="column" >
+            <mat-card>
+                   <mat-card-header fxLayoutAlign="center">
+                    <mat-card-title>Employee Details</mat-card-title>
+                    </mat-card-header>
+                     <mat-card-content>
+                   
+                        <form [formGroup]="Employeeform" style="height: 300px;
+                        overflow-y: auto">
+                            <div fxLayout="column" fxLayoutAlign="center" formArrayName="employees"
+                            *ngFor="let item of Employeeform.get('employees').controls; let i= index;">
+                            <div [formGroupName]="i">
+                                    <div fxlayoutAlign="center"><h4>Form no:{{i+1}}</h4></div>
+
+                                <div fxLayout="row" fxLayoutAlign="center">
+                                    <mat-form-field >
+                                        <input matInput placeholder="Employee Name"  formControlName="name" required>
+                                       
+                                    </mat-form-field>
+    
+                                </div>
+                                
+                                <div fxLayout="row" fxLayoutAlign="center">
+                                    <mat-form-field >
+                                        <mat-label>Age</mat-label>
+                                        <mat-select panelClass="selectPanel" formControlName="age">
+                                            <mat-option
+                                                *ngFor="let iterator of Ages" [value]="iterator.age">
+                                                {{iterator.age}}
+                                            </mat-option>
+                                        </mat-select>
+                                        
+                                    </mat-form-field>
+                                </div>
+                                
+                                <div fxLayout="row" fxLayoutAlign="center">
+                                    <mat-form-field>
+                                        <input type="text"  matInput placeholder="Employee Salary" formControlName="salary" required>
+                                       
+    
+                                    </mat-form-field>
+                                </div>
+    
+                                <div fxLayout="row" fxLayoutAlign="center">
+                                    <mat-form-field >
+                                        <input type="text" matInput placeholder="Employee Experience" formControlName="experience" required>
+                                        
+    
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            </div> 
+    
+    
+                        <div fxLayout="column" fxLayoutAlign="center">
+                            <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="2em">
+                                <div fxLayout="column" >
+                                <button mat-raised-button style="width: 160px;height: 45px;" (click)="addMember()"
+                                    style="background: black; color:white">Submit </button>
+                                    </div>
+                                    <div fxLayout="column">
+                                        <button  mat-raised-button [disabled]="Employeeform.invalid" (click)="add()" [ngClass]="{'A': Employeeform.invalid}">Add</button>
+                                    </div>
+                                    
+                            </div>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div> 
+                         
+                

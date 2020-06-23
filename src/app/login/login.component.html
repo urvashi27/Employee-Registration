@@ -1,0 +1,50 @@
+<mat-toolbar style="background-color:black;color: white;">My app</mat-toolbar>
+<div fxLayout="column"  fxLayoutAlign="center center" style="height:89%;background-color:floralwhite">
+    
+    <div fxlayout="column" fxFlex="80" fxLayoutAlign="center center">
+        
+        <mat-card class="login">
+            <p style="font-family: cursive;text-align: center;">login</p>
+                <form [formGroup]="userDetailsForm">     
+            <div fxLayout="row" fxLayoutAlign="center center">
+                
+                <mat-form-field appearance="outline">
+                 
+                  <div fxLayout="row">
+                <mat-icon>account_circle</mat-icon>   <input style="margin-left: 1em;" matInput maxlength="8" placeholder="Username" formControlName="username"  >
+                  </div>
+                </mat-form-field>
+             
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center center">
+                    <mat-form-field appearance="outline">
+                           <div fxLayout="row">
+                               <mat-icon>lock</mat-icon>
+                            <input  style="margin-left: 1em;" type="password" maxlength="6" matInput  placeholder="password" formControlName="password">
+                           </div>
+                        </mat-form-field>
+            </div>
+            
+            
+                    
+                            <div fxLayout="row" fxLayoutAlign="center center">
+                                
+                                <button mat-raised-button  (click)="loginUser()" 
+                                style="background:black; color:white;width:180px;">Log In </button>
+                                    
+                            </div>
+
+           </form>
+        </mat-card>
+    </div>
+    
+    
+</div>
+
+
+
+
+
+
+
+        

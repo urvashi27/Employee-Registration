@@ -1,0 +1,47 @@
+<div fxLayout="column " fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="row " fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+
+        <mat-sidenav-container fullscreen>
+            <mat-sidenav mode="over" #sidenav closed position="start">
+                <div fxLayout="column " fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+                    <div fxLayout="row " *ngFor="let i of sidenaveContent" (click)="navigateTo(i.path,sidenav)" class="navbordr" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true"
+                        [fxHide]="false">
+
+                        <div fxLayout="column " fxFlex="20" fxLayoutAlign="center" [fxShow]="true" [fxHide]="false">
+                            <i class="material-icons">
+                                {{i.iconName}}
+                            </i>
+                        </div>
+                        <div fxLayout="column " fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true"
+                            [fxHide]="false">
+                            <p>{{i.name}}</p>
+                        </div>
+                    </div>
+                   
+                </div>
+            </mat-sidenav>
+            <mat-sidenav-content>
+                <mat-toolbar style="background:black">
+                    <div fxLayout="row " fxFlex="100" fxLayoutAlign="space-between" [fxShow]="true" [fxHide]="false">
+                        <div fxLayout="column " fxLayoutAlign="center" [fxShow]="true" [fxHide]="false">
+                            <button mat-icon-button (click)="sidenav.toggle()">
+                                <mat-icon style="color:white">menu</mat-icon>
+                            </button>
+                        </div>
+
+                        <div fxLayout="row "  (click)="navigateTo('')" fxLayoutGap="0.5em" fxLayoutAlign="flex-end" [fxShow]="true"
+                            [fxHide]="false">
+                            <div fxLayout="column " fxLayoutAlign="center" [fxShow]="true" [fxHide]="false">
+                                <i style="color:white" class="material-icons">
+                                    power_settings_new </i>
+                            </div>
+                          
+                        </div>
+                    </div>
+                </mat-toolbar>
+                
+                <router-outlet></router-outlet>
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+    </div>
+</div>

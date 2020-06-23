@@ -1,0 +1,9 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+mat-sidenav {
+    width: 280px;
+    padding:10px
+}
+.mat-drawer { 
+        color:black
+}
+

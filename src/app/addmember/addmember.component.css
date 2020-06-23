@@ -1,0 +1,25 @@
+::ng-deep .mat-select-panel.selectPanel
+{
+        height: 175px !important;
+        margin-top:2.5em;
+ }
+ .mat-card
+ {
+        padding: 25px;
+
+        width: 380px;
+ }
+ .mat-form-field
+ {
+        width: 300px;
+ }
+.A{
+       color:white ;
+       background: grey;
+}
+.B
+{
+       background: black;
+       color:white;
+
+}
